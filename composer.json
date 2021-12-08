@@ -1,14 +1,14 @@
 {
     "name": "ibragimoff26/crypto-pay-api",
     "description": "Crypto pay api for @CryptoBot",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "keywords": ["cryptobot", "cryptopay"],
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
             "Ibragimoff\\CryptoPayApi\\": "src/",
-            "Ibragimoff\\CryptoPayApi\\Tests": "tests/"
+            "Ibragimoff\\CryptoPayApi\\Tests\\": "tests/"
         }
     },
     "authors": [
