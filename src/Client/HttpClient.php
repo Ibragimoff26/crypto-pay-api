@@ -42,13 +42,13 @@ final class HttpClient
         string $apiUrl,
         string $apiKey,
         HttpClientInterface $client,
-        SerializerInterface $serializer
+        SerializerInterface $serializer = null
     )
     {
         $this->apiUrl = $apiUrl;
         $this->apiKey = $apiKey;
         $this->client = $client;
-        $this->serializer = $serializer;
+        $this->serializer = $serializer ?? $this->createSerializer();
     }
 
     /**
@@ -125,5 +125,19 @@ final class HttpClient
         }
 
         return new ResponseException('При отправке запроса возникла ошибка', ['dbg' => $response->getInfo('debug')], $prev);
+    }
+
+    private function createSerializer(): Serializer
+    {
+        return new Serializer(
+            [
+                new ArrayDenormalizer(),
+                new ObjectNormalizer(
+                    nameConverter: new CamelCaseToSnakeCaseNameConverter(),
+                    propertyTypeExtractor: new ReflectionExtractor()
+                ),
+                new DateTimeNormalizer()
+            ]
+        );
     }
 }

@@ -12,6 +12,11 @@ use Ibragimoff\CryptoPayApi\Client\Response\HttpResponseFactoryInterface;
  */
 final class CreateInvoiceRequest extends BaseHttpRequest
 {
+    public const PAID_BTN_VIEW_ITEM = 'viewItem';
+    public const PAID_BTN_OPEN_CHANNEL = 'openChannel';
+    public const PAID_BTN_OPEN_BOT = 'openBot';
+    public const PAID_BTN_CALLBACK = 'callback';
+
     private string $asset;
     private string $amount;
     private ?string $description;

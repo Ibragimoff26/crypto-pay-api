@@ -5,7 +5,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Ibragimoff\\CryptoPayApi\\": "src/"
+            "Ibragimoff\\CryptoPayApi\\": "src/",
+            "Ibragimoff\\CryptoPayApi\\Tests": "tests/"
         }
     },
     "authors": [
@@ -25,6 +26,7 @@
         "phpdocumentor/reflection-docblock": "^5.3"
     },
     "require-dev": {
-        "symfony/var-dumper": "^6.0"
+        "symfony/var-dumper": "^6.0",
+        "phpunit/phpunit": "^9"
     }
 }
