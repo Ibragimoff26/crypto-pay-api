@@ -1,0 +1,30 @@
+{
+    "name": "ibragimoff26/crypto-pay-api",
+    "description": "Crypto pay api for @CryptoBot",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ibragimoff\\CryptoPayApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shapi Ibragimov",
+            "email": "ibragimych26@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0",
+        "symfony/http-client": "^6.0",
+        "symfony/serializer": "^6.0",
+        "symfony/property-access": "^6.0",
+        "symfony/property-info": "^6.0",
+        "doctrine/annotations": "^1.13",
+        "phpdocumentor/reflection-docblock": "^5.3"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.0"
+    }
+}
