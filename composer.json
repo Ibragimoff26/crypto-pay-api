@@ -1,7 +1,7 @@
 {
     "name": "ibragimoff26/crypto-pay-api",
     "description": "Crypto pay api for @CryptoBot",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "keywords": ["cryptobot", "cryptopay"],
     "type": "library",
     "license": "MIT",

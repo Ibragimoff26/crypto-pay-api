@@ -99,7 +99,8 @@ final class CryptoPayApiTest extends TestCase
                 $description,
                 payload: $payload,
                 allowComments: $allowComments,
-                allowAnonymous: $allowAnonymous
+                allowAnonymous: $allowAnonymous,
+                expiriesIn: 100
             )
         );
 

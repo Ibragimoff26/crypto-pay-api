@@ -20,21 +20,25 @@ final class CreateInvoiceRequest extends BaseHttpRequest
     private string $asset;
     private string $amount;
     private ?string $description;
+    private ?string $hiddenMessage;
     private ?string $paidBtnName;
     private ?string $paidBtnUrl;
     private ?string $payload;
     private ?bool $allowComments;
     private ?bool $allowAnonymous;
+    private ?int $expiriesIn;
 
     public function __construct(
         string $asset,
         string $amount,
         ?string $description = null,
+        ?string $hiddenMessage = null,
         ?string $paidBtnName = null,
         ?string $paidBtnUrl = null,
         ?string $payload = null,
         ?bool $allowComments = null,
-        ?bool $allowAnonymous = null
+        ?bool $allowAnonymous = null,
+        ?int $expiriesIn = null
     ) {
         $this->asset = $asset;
         $this->amount = $amount;
@@ -44,6 +48,8 @@ final class CreateInvoiceRequest extends BaseHttpRequest
         $this->payload = $payload;
         $this->allowComments = $allowComments;
         $this->allowAnonymous = $allowAnonymous;
+        $this->hiddenMessage = $hiddenMessage;
+        $this->expiriesIn = $expiriesIn;
     }
 
 
@@ -60,11 +66,13 @@ final class CreateInvoiceRequest extends BaseHttpRequest
                     'asset' => $this->asset,
                     'amount' => $this->amount,
                     'description' => $this->description,
+                    'hidden_message' => $this->hiddenMessage,
                     'paid_btn_name' => $this->paidBtnName,
                     'paid_btn_url' => $this->paidBtnUrl,
                     'payload' => $this->payload,
                     'allow_comments' => $this->allowComments,
-                    'allow_anonymous' => $this->allowAnonymous
+                    'allow_anonymous' => $this->allowAnonymous,
+                    'expires_in' => $this->expiriesIn
                 ],
                 [null]
             )
@@ -81,9 +89,10 @@ final class CreateInvoiceRequest extends BaseHttpRequest
         return $this->asset;
     }
 
-    public function setAsset(string $asset): void
+    public function setAsset(string $asset): CreateInvoiceRequest
     {
         $this->asset = $asset;
+        return $this;
     }
 
     public function getAmount(): string
@@ -91,9 +100,10 @@ final class CreateInvoiceRequest extends BaseHttpRequest
         return $this->amount;
     }
 
-    public function setAmount(string $amount): void
+    public function setAmount(string $amount): CreateInvoiceRequest
     {
         $this->amount = $amount;
+        return $this;
     }
 
     public function getDescription(): ?string
@@ -101,9 +111,21 @@ final class CreateInvoiceRequest extends BaseHttpRequest
         return $this->description;
     }
 
-    public function setDescription(?string $description): void
+    public function setDescription(?string $description): CreateInvoiceRequest
     {
         $this->description = $description;
+        return $this;
+    }
+
+    public function getHiddenMessage(): ?string
+    {
+        return $this->hiddenMessage;
+    }
+
+    public function setHiddenMessage(?string $hiddenMessage): CreateInvoiceRequest
+    {
+        $this->hiddenMessage = $hiddenMessage;
+        return $this;
     }
 
     public function getPaidBtnName(): ?string
@@ -111,9 +133,10 @@ final class CreateInvoiceRequest extends BaseHttpRequest
         return $this->paidBtnName;
     }
 
-    public function setPaidBtnName(?string $paidBtnName): void
+    public function setPaidBtnName(?string $paidBtnName): CreateInvoiceRequest
     {
         $this->paidBtnName = $paidBtnName;
+        return $this;
     }
 
     public function getPaidBtnUrl(): ?string
@@ -121,9 +144,10 @@ final class CreateInvoiceRequest extends BaseHttpRequest
         return $this->paidBtnUrl;
     }
 
-    public function setPaidBtnUrl(?string $paidBtnUrl): void
+    public function setPaidBtnUrl(?string $paidBtnUrl): CreateInvoiceRequest
     {
         $this->paidBtnUrl = $paidBtnUrl;
+        return $this;
     }
 
     public function getPayload(): ?string
@@ -131,9 +155,10 @@ final class CreateInvoiceRequest extends BaseHttpRequest
         return $this->payload;
     }
 
-    public function setPayload(?string $payload): void
+    public function setPayload(?string $payload): CreateInvoiceRequest
     {
         $this->payload = $payload;
+        return $this;
     }
 
     public function getAllowComments(): ?bool
@@ -141,9 +166,10 @@ final class CreateInvoiceRequest extends BaseHttpRequest
         return $this->allowComments;
     }
 
-    public function setAllowComments(?bool $allowComments): void
+    public function setAllowComments(?bool $allowComments): CreateInvoiceRequest
     {
         $this->allowComments = $allowComments;
+        return $this;
     }
 
     public function getAllowAnonymous(): ?bool
@@ -151,8 +177,20 @@ final class CreateInvoiceRequest extends BaseHttpRequest
         return $this->allowAnonymous;
     }
 
-    public function setAllowAnonymous(?bool $allowAnonymous): void
+    public function setAllowAnonymous(?bool $allowAnonymous): CreateInvoiceRequest
     {
         $this->allowAnonymous = $allowAnonymous;
+        return $this;
+    }
+
+    public function getExpiriesIn(): ?int
+    {
+        return $this->expiriesIn;
+    }
+
+    public function setExpiriesIn(?int $expiriesIn): CreateInvoiceRequest
+    {
+        $this->expiriesIn = $expiriesIn;
+        return $this;
     }
 }
